@@ -3,6 +3,7 @@
 require_relative "db_tunnel/version"
 require "db_tunnel/railtie" if defined?(Rails)
 
+puts "required"
 module DbTunnel
   class Error < StandardError; end
   # Your code goes here...

@@ -1,13 +1,11 @@
 require "db_tunnel"
 require "rails"
 
+puts "Railtie"
 module DbTunnel
   class Railtie < Rails::Railtie
-    railtie_name :db_tunnel
-
     rake_tasks do
-      path = File.expand_path(__dir__)
-      Dir.glob("#{path}/tasks/**/*.rake").each { |f| load f }
+      load "tasks/db.rake"
     end
   end
 end
