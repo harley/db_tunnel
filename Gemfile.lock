@@ -2,7 +2,9 @@ PATH
   remote: .
   specs:
     db_tunnel (0.1.0)
+      bundler (>= 2.0)
       rails (> 6.0)
+      rake
 
 GEM
   remote: https://rubygems.org/
