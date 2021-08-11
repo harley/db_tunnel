@@ -11,11 +11,11 @@ namespace :db_tunnel do
 
   desc "db_tunnel:check[<ip>] - check db connection with a query"
   task check: :environment do
-    DbTunnel::DbSync.tunnel_check
+    DbTunnel::DbSync.new(tunnel_host: args[:tunnel_host]).tunnel_check
   end
 
   desc "db_tunnel:clone_db[<ip>] - copy db from staging to local"
   task clone_db: :environment do
-    DbTunnel::DbSync.execute(from: :tunnel_staging, to: :local)
+    DbTunnel::DbSync.new(tunnel_host: args[:tunnel_host]).execute(from: :tunnel_staging, to: :local)
   end
 end
