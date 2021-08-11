@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 require_relative "db_tunnel/version"
-require "db_tunnel/railtie" if defined?(Rails)
+require_relative "db_tunnel/db_sync"
+require_relative "db_tunnel/railtie" if defined?(Rails)
 
-puts "required"
 module DbTunnel
   class Error < StandardError; end
   # Your code goes here...
